@@ -1,0 +1,34 @@
+game_slug: pajama-sams-sock-works
+slug: pajama-sams-sock-works-steam-scummvm-native
+name: "Pajama Sam's Sock Works"
+steamid: 292840
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1999
+script:
+  files:
+    - HE0: $STEAM:292840:Socks.he0
+    - HE1: $STEAM:292840:Socks.(a)
+    - HE2: $STEAM:292840:Socks.he2
+    - HE3: $STEAM:292840:Socks.he4
+    - HE4: $STEAM:292840:Socks.he7
+  game:
+    game_id: scumm:socks
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+

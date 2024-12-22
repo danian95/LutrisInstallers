@@ -1,0 +1,41 @@
+game_slug: spy-fox-in-hold-the-mustard
+slug: spy-fox-in-hold-the-mustard-steam-scummvm-native
+name: "SPY Fox in: Hold the Mustard"
+steamid: 292300
+runner: scummvm
+version: Steam with Native ScummVM
+year: 2000
+script:
+  files:
+    - HE0: $STEAM:292300:mustard.HE0
+    - HE1: $STEAM:292300:mustard.(a)
+    - HE2: $STEAM:292300:mustard.he2
+    - HE3: $STEAM:292300:mustard.he4
+    - HE4: $STEAM:292300:mustard.he7
+    - map: $STEAM:292300:map.ini
+    - images: $STEAM:292300:images
+  game:
+    game_id: scumm:mustard
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $map
+    - merge:
+        dst: $GAMEDIR/images
+        src: $images

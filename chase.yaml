@@ -1,0 +1,45 @@
+game_slug: spy-fox-in-cheese-chase
+slug: spy-fox-in-cheese-chase-steam-native-scummvm
+name: "SPY Fox in: Cheese Chase"
+steamid: 292280
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1998
+script:
+  files:
+    - HE0: $STEAM:292280:CHASE.HE0
+    - HE1: $STEAM:292280:CHASE.HE1
+    - HE2: $STEAM:292280:CHASE.HE2
+    - HE4: $STEAM:292280:CHASE.HE4
+    - HE8: $STEAM:292280:CHASE.HE8
+    - HE9: $STEAM:292280:CHASE.HE9
+    - CUSTOM: $STEAM:292280:CUSTOM
+    - LEVELS: $STEAM:292280:LEVELS
+  game:
+    game_id: scumm:chase
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE8
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE9
+    - merge:
+        dst: $GAMEDIR/LEVELS
+        src: $LEVELS
+    - merge:
+        dst: $GAMEDIR/CUSTOM
+        src: $CUSTOM
