@@ -1,0 +1,30 @@
+game_slug: freddi-fish-4-the-case-of-the-hogfish-rustlers-of-
+name: 'Freddi Fish 4: The Case of the Hogfish Rustlers of Briny Gulch'
+runner: scummvm
+script:
+  files:
+    - HE0: $STEAM:294550:FREDDI4.HE0
+    - HE1: $STEAM:294550:FREDDI4.(A)
+    - HE2: $STEAM:294550:FREDDI4.HE2
+    - HE4: $STEAM:294550:FREDDI4.HE4
+  game:
+    appid: 294550
+    game_id: scumm:freddi4
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+steamid: 294550
+slug: freddi-fish-4-the-case-of-the-steam-native
+version: Steam with Native ScummVM
+year: 1999

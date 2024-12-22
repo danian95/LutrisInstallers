@@ -1,0 +1,34 @@
+game_slug: freddi-fish-and-the-case-of-the-missing-kelp-seeds
+name: 'Freddi Fish and The Case of the Missing Kelp Seeds'
+runner: scummvm
+script:
+  files:
+    - HE0: $STEAM:283940:FREDDI.HE0
+    - HE1: $STEAM:283940:FREDDI.HE1
+    - HE2: $STEAM:283940:FREDDI.HE2
+    - HE3: $STEAM:283940:FREDDI.HE3
+    - HE4: $STEAM:283940:FREDDI.HE4
+  game:
+    appid: 283940
+    game_id: scumm:freddi
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+steamid: 283940
+slug: freddi-fish-and-the-case-of-the-missing-kelp-seeds-steam-scummvm-native
+version: Steam with Native ScummVM
+year: 1994

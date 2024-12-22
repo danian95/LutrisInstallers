@@ -1,0 +1,34 @@
+game_slug: freddi-fish-5-the-case-of-the-creature-of-coral-co
+name: 'Freddi Fish 5: The Case of the Creature of Coral Cove'
+runner: scummvm
+script:
+  files:
+    - HE0: $STEAM:294570:FREDDICOVE.HE0
+    - HE1: $STEAM:294570:FREDDICOVE.(A)
+    - HE2: $STEAM:294570:FREDDICOVE.HE2
+    - HE3: $STEAM:294570:FREDDICOVE.HE3
+    - HE4: $STEAM:294570:FREDDICOVE.HE4
+  game:
+    appid: 294570
+    game_id: scumm:freddicove
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+steamid: 294570
+slug: freddi-fish-5-the-case-of-the-creature-of-coral-co-steam-scummvm-native
+version: Steam with Native ScummVM
+year: 2001

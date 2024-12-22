@@ -1,0 +1,38 @@
+game_slug: fatty-bears-birthday-surprise
+name: Fatty Bear's Birthday Surprise
+runner: scummvm
+script:
+  files:
+    - HE0: $STEAM:317030:FBEAR.HE0
+    - HE1: $STEAM:317030:FBEAR.HE1
+    - HE2: $STEAM:317030:FBEAR.HE2
+    - HE3: $STEAM:317030:FBEAR.HE3
+    - HE4: $STEAM:317030:FBEAR.HE4
+    - SNG: $STEAM:317030:FBEAR.SNG
+  game:
+    appid: 317030
+    game_id: scumm:fbear
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $SNG
+slug: fatty-bears-birthday-surprise-steam
+steamid: 317030
+version: Steam with Native ScummVM
+year: 1993

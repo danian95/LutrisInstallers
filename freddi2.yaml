@@ -1,0 +1,30 @@
+game_slug: freddi-fish-2-the-case-of-the-haunted-schoolhouse
+name: 'Freddi Fish 2: The Case of the Haunted Schoolhouse'
+runner: scummvm
+script:
+  files:
+    - HE0: $STEAM:294530:Freddi2.he0
+    - HE1: $STEAM:294530:Freddi2.he1
+    - HE2: $STEAM:294530:Freddi2.he2
+    - HE4: $STEAM:294530:Freddi2.he4
+  game:
+    appid: 294530
+    game_id: scumm:freddi2
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+steamid: 294530
+slug: freddi-fish-2-the-case-of-the-steam-native-scummvm
+version: Steam with Native ScummVM
+year: 1996
