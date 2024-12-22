@@ -3,11 +3,11 @@ name: 'Freddi Fish and The Case of the Missing Kelp Seeds'
 runner: scummvm
 script:
   files:
-    - HE0: $STEAM:283940:FREDDI.HE0
-    - HE1: $STEAM:283940:FREDDI.HE1
-    - HE2: $STEAM:283940:FREDDI.HE2
-    - HE3: $STEAM:283940:FREDDI.HE3
-    - HE4: $STEAM:283940:FREDDI.HE4
+    - HE0: $STEAM:283940:Freddi.he0
+    - HE1: $STEAM:283940:Freddi.he1
+    - HE2: $STEAM:283940:Freddi.he2
+    - HE3: $STEAM:283940:Freddi.he3
+    - HE4: $STEAM:283940:Freddi.he4
   game:
     appid: 283940
     game_id: scumm:freddi
