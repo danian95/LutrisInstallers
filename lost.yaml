@@ -1,0 +1,29 @@
+game_slug: pajama-sams-lost-found
+slug: pajama-sams-lost-found-steam-native-scummvm
+name: "Pajama Sam's Lost & Found"
+steamid: 292860
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1998
+script:
+  files:
+    - HE0: $STEAM:292860:lost.HE0
+    - HE1: $STEAM:292860:lost.(a)
+    - HE2: $STEAM:292860:lost.he2
+    - DATA: $STEAM:292860:data
+  game:
+    game_id: scumm:lost
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/data
+        src: $DATA

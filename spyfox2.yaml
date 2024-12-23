@@ -1,0 +1,33 @@
+game_slug: spy-fox-2-some-assembly-required
+slug: spy-fox-2-some-assembly-required-steam-native-scummvm
+name: "SPY Fox 2: Some Assembly Required"
+steamid: 292240
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1999
+script:
+  files:
+    - HE0: $STEAM:292240:SPYFOX2.HE0
+    - HE1: $STEAM:292240:spyfox2.(a)
+    - HE2: $STEAM:292240:SPYFOX2.HE2
+    - HE4: $STEAM:292240:SPYFOX2.HE4
+    - HE9: $STEAM:292240:spyfox2.he9
+  game:
+    game_id: scumm:spyfox2
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE9

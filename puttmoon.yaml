@@ -1,0 +1,37 @@
+game_slug: putt-putt-goes-to-the-moon
+slug: putt-putt-goes-to-the-moon-steam-native-scummvm
+name: "Putt-Putt Goes to the Moon"
+steamid: 294650
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1993
+script:
+  files:
+    - HE0: $STEAM:294650:PUTTMOON.HE0
+    - HE1: $STEAM:294650:PUTTMOON.HE1
+    - HE2: $STEAM:294650:PUTTMOON.HE2
+    - HE3: $STEAM:294650:PUTTMOON.HE3
+    - HE4: $STEAM:294650:PUTTMOON.HE4
+    - BRS: $STEAM:294650:PUTTMOON.BRS
+  game:
+    game_id: scumm:puttmoon
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $BRS

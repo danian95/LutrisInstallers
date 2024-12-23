@@ -1,0 +1,33 @@
+game_slug: spy-fox-3-operation-ozone
+slug: spy-fox-3-operation-ozone-steam-native-scummvm
+name: "SPY Fox 3: Operation Ozone"
+steamid: 292260
+runner: scummvm
+version: Steam with Native ScummVM
+year: 2001
+script:
+  files:
+    - HE0: $STEAM:292260:SPYOZON.HE0
+    - HE1: $STEAM:292260:SPYOZON.(A)
+    - HE2: $STEAM:292260:SPYOZON.HE2
+    - HE3: $STEAM:292260:SPYOZON.HE3
+    - HE4: $STEAM:292260:SPYOZON.HE4
+  game:
+    game_id: scumm:spyozon
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4

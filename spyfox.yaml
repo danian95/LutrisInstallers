@@ -1,0 +1,29 @@
+game_slug: spy-fox-in-dry-cereal
+slug: spy-fox-in-dry-cereal-steam-native-scummvm
+name: "SPY Fox in: Dry Cereal"
+steamid: 283980
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1997
+script:
+  files:
+    - HE0: $STEAM:283980:SPYFOX.HE0
+    - HE1: $STEAM:283980:SPYFOX.HE1
+    - HE2: $STEAM:283980:SPYFOX.HE2
+    - HE4: $STEAM:283980:SPYFOX.HE4
+  game:
+    game_id: scumm:spyfox
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4

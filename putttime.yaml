@@ -1,0 +1,29 @@
+game_slug: putt-putt-travels-through-time
+slug: putt-putt-travels-through-time-steam-native-scummvm
+name: "Putt-Putt Travels Through Time"
+steamid: 294670
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1997
+script:
+  files:
+    - HE0: $STEAM:294670:PUTTTIME.HE0
+    - HE1: $STEAM:294670:PUTTTIME.HE1
+    - HE2: $STEAM:294670:PUTTTIME.HE2
+    - HE4: $STEAM:294670:PUTTTIME.HE4
+  game:
+    game_id: scumm:putttime
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4

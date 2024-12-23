@@ -1,0 +1,29 @@
+game_slug: pajama-sam-3-you-are-what-you-eat-from-your-head-t
+slug: pajama-sam-3-you-are-what-you-eat-from-your-head-t-steam-native-scummvm
+name: "Pajama Sam 3: You Are What You Eat From Your Head To Your Feet"
+steamid: 292800
+runner: scummvm
+version: Steam with Native ScummVM
+year: 2000
+script:
+  files:
+    - HE0: $STEAM:292800:PAJAMA3.HE0
+    - HE1: $STEAM:292800:PAJAMA3.(A)
+    - HE2: $STEAM:292800:PAJAMA3.HE2
+    - HE4: $STEAM:292800:PAJAMA3.HE4
+  game:
+    game_id: scumm:pajama3
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4

@@ -1,0 +1,41 @@
+game_slug: putt-putt-and-peps-balloon-o-rama
+slug: putt-putt-and-peps-balloon-o-rama-steam-native-scummvm
+name: "Putt-Putt and Pep's Balloon-o-Rama"
+steamid: 284000
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1996
+script:
+  files:
+    - HE0: $STEAM:284000:BALLOON.HE0
+    - HE1: $STEAM:284000:BALLOON.HE1
+    - HE2: $STEAM:284000:BALLOON.HE2
+    - HE3: $STEAM:284000:BALLOON.HE3
+    - HE4: $STEAM:284000:BALLOON.HE4
+    - HE8: $STEAM:284000:BALLOON.HE8
+    - HE9: $STEAM:284000:BALLOON.HE9
+  game:
+    game_id: scumm:balloon
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4   
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE8
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE9

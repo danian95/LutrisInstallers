@@ -1,0 +1,29 @@
+game_slug: pajama-sam-2-thunder-and-lightning-arent-so-fright
+slug: pajama-sam-2-thunder-and-lightning-arent-so-fright-steam-native-scummvm
+name: "Pajama Sam 2: Thunder and Lightning Aren't So Frightening"
+steamid: 292780
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1998
+script:
+  files:
+    - HE0: $STEAM:292780:PAJAMA2.HE0
+    - HE1: $STEAM:292780:PAJAMA2.HE1
+    - HE2: $STEAM:292780:PAJAMA2.HE2
+    - HE4: $STEAM:292780:PAJAMA2.HE4
+  game:
+    game_id: scumm:pajama2
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4   

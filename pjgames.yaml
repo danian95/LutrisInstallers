@@ -1,0 +1,33 @@
+game_slug: pajama-sam-games-to-play-on-any-day
+slug: pajama-sam-games-to-play-on-any-day-steam-native-scummvm
+name: "Pajama Sam: Games to Play on Any Day"
+steamid: 317020
+runner: scummvm
+version: Steam with Native ScummVM
+year: 2001
+script:
+  files:
+    - HE0: $STEAM:317020:PJGAMES.HE0
+    - HE1: $STEAM:317020:PJGAMES.(A)
+    - HE2: $STEAM:317020:PJGAMES.HE2
+    - HE3: $STEAM:317020:PJGames.he3
+    - HE4: $STEAM:317020:PJGAMES.HE4
+  game:
+    game_id: scumm:pjgames
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3   
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4   

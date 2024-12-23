@@ -1,0 +1,33 @@
+game_slug: freddi-fish-and-luthers-maze-madness
+name: "Freddi Fish and Luther's Maze Madness"
+slug: freddi-fish-and-luthers-maze-madness-steam-native-scummvm
+steamid: 284020
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1996
+script:
+  files:
+    - HE0: $STEAM:284020:MAZE.HE0
+    - HE1: $STEAM:284020:MAZE.HE1
+    - HE2: $STEAM:284020:MAZE.HE2
+    - HE4: $STEAM:284020:MAZE.HE4
+    - HE8: $STEAM:284020:MAZE.HE8
+  game:
+    game_id: scumm:maze
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE8

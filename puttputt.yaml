@@ -1,0 +1,33 @@
+game_slug: putt-putt-joins-the-parade
+slug: putt-putt-joins-the-parade-steam-native-scummvm
+name: "Putt-Putt Joins the Parade"
+steamid: 283920
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1992
+script:
+  files:
+    - HE0: $STEAM:283920:PUTTPUTT.HE0
+    - HE1: $STEAM:283920:PUTTPUTT.HE1
+    - HE2: $STEAM:283920:PUTTPUTT.HE2
+    - HE3: $STEAM:283920:PUTTPUTT.HE3
+    - HE4: $STEAM:283920:PUTTPUTT.HE4
+  game:
+    game_id: scumm:puttputt
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE3
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4

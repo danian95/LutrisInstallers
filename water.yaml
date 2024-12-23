@@ -1,0 +1,33 @@
+game_slug: freddi-fish-and-luthers-water-worries
+name: "Freddi Fish and Luther's Water Worries"
+slug: freddi-fish-and-luthers-water-worries-steam-native-scummvm
+steamid: 294580
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1996
+script:
+  files:
+    - HE0: $STEAM:294580:WATER.HE0
+    - HE1: $STEAM:294580:WATER.HE1
+    - HE2: $STEAM:294580:WATER.HE2
+    - HE4: $STEAM:294580:WATER.HE4
+    - HE7: $STEAM:294580:WATER.HE7
+  game:
+    game_id: scumm:water
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE1
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE7

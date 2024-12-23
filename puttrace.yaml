@@ -1,0 +1,33 @@
+game_slug: putt-putt-enters-the-race
+slug: putt-putt-enters-the-race-steam-native-scummvm
+name: "Putt-Putt Enters the Race"
+steamid: 294680
+runner: scummvm
+version: Steam with Native ScummVM
+year: 1998
+script:
+  files:
+    - A: $STEAM:294680:puttrace.(a)
+    - B: $STEAM:294680:puttrace.(b)
+    - HE0: $STEAM:294680:PUTTRACE.HE0
+    - HE2: $STEAM:294680:PUTTRACE.HE2
+    - HE4: $STEAM:294680:PUTTRACE.HE4
+  game:
+    game_id: scumm:puttrace
+    path: $GAMEDIR
+  installer:
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE0
+    - merge:
+        dst: $GAMEDIR/
+        src: $A
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE2
+    - merge:
+        dst: $GAMEDIR/
+        src: $B
+    - merge:
+        dst: $GAMEDIR/
+        src: $HE4
