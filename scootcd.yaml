@@ -1,0 +1,48 @@
+game_slug: scooters-magic-castle
+slug: scooters-magic-castle-dos-cd
+description: 'You need to have the original CD to install.'
+name: "Scooter's Magic Castle"
+runner: dosbox
+version: CD
+year: 1993
+script:
+  game:
+    config_file: $GAMEDIR/dosbox.conf
+    main_file: $GAMEDIR/c/scootcd.bat
+  installer:
+    - insert-disc:
+        requires: scootcd.bbm
+    - execute:
+        command: mkdir $GAMEDIR/c
+    - merge:
+        src: $DISC/eakids/scootcd
+        dst: $GAMEDIR/c
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: fullscreen
+        section: sdl
+        value: true
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: sbtype
+        section: sblaster
+        value: sb16
+    - write_file:
+        content: '
+
+          @echo off
+
+          mount C $GAMEDIR/c -t dir
+
+          C:
+
+          '
+        file: $GAMEDIR/dosbox.conf
+        mode: a
+    - write_file:
+        content: '
+
+          scootcd.exe /ms3 /ss2 /vv /c
+
+          '
+        file: $GAMEDIR/c/scootcd.bat
