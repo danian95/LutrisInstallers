@@ -1,0 +1,75 @@
+description: 'This installer uses the original DOS installation CD'
+game_slug: caesar-ii
+gogslug: caesar_ii
+installer_slug: caesar-ii-dos
+name: Caesar II
+notes: ''
+runner: dosbox
+script:
+  game:
+    config_file: $GAMEDIR/dosbox.conf
+    main_file: $GAMEDIR/C/CAESAR2/C2.BAT
+  installer:
+    - insert-disc:
+        requires: c2.pif
+    - execute:
+        command: mkdir $GAMEDIR/C
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: aspect
+        section: render
+        value: true
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: fullscreen
+        section: sdl
+        value: true
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: sbtype
+        section: sblaster
+        value: sb16
+    - write_config:
+        file: $GAMEDIR/dosbox.conf
+        key: cycles
+        section: cpu
+        value: max
+    - write_file:
+        content: '
+
+          [autoexec]
+
+          # Lines in this section will be run at startup.
+          
+          @echo off
+          
+          mount C $GAMEDIR/C
+          
+          C:
+          
+          '
+        file: $GAMEDIR/dosbox.conf
+        mode: a
+    - write_file:
+        content: '
+
+          [autoexec]
+
+          # Lines in this section will be run at startup.
+          
+          @echo off
+          
+          mount C $GAMEDIR/C
+
+          mount D $DISC -t cdrom
+          
+          D:\INSTALL.EXE
+          
+          '
+        file: $CACHE/install.conf
+    - task:
+        name: dosexec
+        config_file: $CACHE/install.conf
+slug: caesar-ii-dos
+version: DOS
+year: 1995
