@@ -1,0 +1,41 @@
+game_slug: logical-journey-of-the-zoombinis
+slug: logical-journey-of-the-zoombinis
+description: 'You need to have the original CD to install.'
+name: "Logical Journey of the Zoombinis"
+runner: wine
+version: CD
+year: 1996
+script:
+  game:
+    arch: win32
+    prefix: $GAMEDIR
+    exe: "drive_c/Program Files/The Learning Company/Zoombinis Logical Journey(TM)/Zoombinis Logical Journey.exe"
+  installer:
+    - insert-disc:
+        requires: Zoombini
+    - task:
+        name: create_prefix
+        arch: win32
+        prefix: $GAMEDIR
+    - task:
+        name: winetricks
+        app: win98
+    - execute:
+        command: mkdir $GAMEDIR/drive_e
+    - merge:
+        src: $DISC/
+        dst: $GAMEDIR/drive_e/
+    - execute:
+        command: ln -s ../drive_e "$GAMEDIR/dosdevices/e:"
+    - task:
+        name: set_regedit
+        path: HKEY_LOCAL_MACHINE\Software\Wine\Drives
+        key: "e:"
+        value: "cdrom"
+        type: REG_SZ
+    - task:
+        name: wineexec
+        prefix: $GAMEDIR
+        description: "Running installation..."
+        executable: $GAMEDIR/drive_e/Zoombini/Setup.exe
+        return_code: 256
